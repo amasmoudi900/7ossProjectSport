@@ -22,7 +22,6 @@ export class WeatherComponent implements OnInit {
     console.log('Here weather city', this.weather);
     this.userService.searchWeather(this.weather).subscribe(
       (data)=> {
-        console.log('Here weather data', data.result);
         this.result = data.result;
       }
     )

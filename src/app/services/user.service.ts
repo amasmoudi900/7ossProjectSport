@@ -9,9 +9,11 @@ export class UserService {
   userURL: string = "http://localhost:3000/users";
   constructor(private httpClient: HttpClient) { }
 
+  // Req to login
   login(user) {
     return this.httpClient.post<{ message: string, user: any }>(`${this.userURL}/login`, user);
   }
+  // Req to add user
   signup(user, img: File) {
     let formData = new FormData();
     formData.append('firstName', user.firstName);
